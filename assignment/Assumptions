@@ -1,0 +1,39 @@
+
+
+ProductieInstallatieModel:
+"name" mag niet leeg zijn
+"contact" moet niet null zijn
+
+ContactPersoonModel:
+"name" mag niet leeg zijn.
+"zipCode" mag niet leeg zijn.
+"city" mag niet leeg zijn.
+"number" mag niet leeg zijn.
+
+Entities
+"name" moet uniek zijn, vandaar de uniek indexes
+"id" is een DB-only veld dat zorgt voor unieke regels (want het is de PK)
+
+
+Zeoeken:
+- OutputPower min en max zijn optioneel. Alleen een min of alleen een max mag ook.
+- OutputPower min en max > 0 validatie
+- Performance hit bij het altijd gebruiken van een BETWEEN in mijn findAll query is ok.
+
+
+Precision:
+De API (en database column) zorgt voor een standardisering van precision naar 4 decimals places.
+Dus als je 12.33 opslaat dan ga je 12.3300 terug krijgen als BigDecimal waarde.
+
+
+URL naming:
+ik heb gekozen om create en get list op de meervoud variant te zetten en getByName op de enkelvoud variant
+te zetten. Dit is altijd een punt voor discussie, persoonlijk maakt het niets uit voor mij zo maar het
+consistent is.
+
+
+Testing:
+Behalve dingen zoals de equals en hashcode methoded is alles getest. De meeste functionaliteit is door E2E integration tests getest.
+Ik heb ook een WebMvcTest en DataJpaTest gemaakt zodat jullie weten dat ik dat ook kan.
+Ik heb gewerkt op projecten waar dit onvoldoende zoude zijn want "alles heeft zijn eigen unit test nodig" en ik kan ook zo werken
+maar ik dacht het zou beter zijn om mijn tijd anders te besteden.

@@ -7,24 +7,26 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 @Getter
 @Setter
-@RequiredArgsConstructor
+@EqualsAndHashCode
 public class ProductieInstallatieModel {
 
     @NotEmpty
-    private final String name;
+    private String name;
 
     @NotNull
-    private final Integer contact;
+    private Integer contact;
 
     @DecimalMin("0.0001")
     @DecimalMax("999999")
-    private final BigDecimal outputPower;
-
+    @NotNull
+    private BigDecimal outputPower;
 
 }

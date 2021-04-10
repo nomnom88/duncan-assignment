@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Duncan Campbell's solicitie opdracht
+  profiles:
+    active: in-memory-h2
+  banner:
+    image:
+      location: classpath:tennet-logo.png
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
